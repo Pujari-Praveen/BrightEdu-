@@ -18,3 +18,15 @@
 .Main-header nav a {
   padding: 0px 30px;
 }
+
+.Schedule-input-form {
+  border: 2px solid red;
+  /* height: 70px; */
+  width: fit-content;
+  padding: 10px;
+}
+
+.Exam-input-label{
+  font-size: large;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
