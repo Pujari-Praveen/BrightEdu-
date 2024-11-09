@@ -1,0 +1,11 @@
+.Main-header {
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  box-shadow: 5px 5px 5px lightgray;
+}
+
+.Logo {
+  margin-left: 40px;
+}

@@ -1,0 +1,19 @@
+.Schedule-input-form {
+  width: fit-content;
+  padding: 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.Exam-input-label {
+  font-size: large;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.Exam-input-label input {
+  display: block;
+}

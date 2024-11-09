@@ -1,3 +1,5 @@
+import '../styles/ScheduleForm.css';
+
 const ExamsCountInput = () => {
   return (
     <label className="Exam-input-label">How many Exams Do you have :
