@@ -1,6 +1,6 @@
 .Schedule-input-form {
   max-width: 500px;
-  max-height: 350px;
+  max-height: 400px;
   padding: 30px;
   position: absolute;
   top: 0;
@@ -59,9 +59,41 @@
   padding: 5px 8px;
   border: 1px solid orange;
   background-color: inherit;
-  border-radius: 5px;  
+  border-radius: 5px;
 }
 
 .Add-input-btn span {
   padding: 5px;
+}
+
+.carousel-control-prev {
+  position: relative;
+}
+
+.carousel-control-next {
+  position: relative;
+}
+
+.carousel-control-next-icon {
+  width: 1.3rem;
+  height: 1.3rem;
+}
+
+.carousel-control-prev-icon {
+  width: 1.3rem;
+  height: 1.3rem;
+}
+
+.Next-Exam-input-navigation {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  color: black;
+  width: 100%;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: orange;
+  border-radius: 50%;
 }
