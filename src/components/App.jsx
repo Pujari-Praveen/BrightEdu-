@@ -1,4 +1,5 @@
 import '../styles/App.css';
+import '../styles/util.css';
 import Header from './Header';
 import ScheduleForm from './ScheduleForm';
 
