@@ -10,7 +10,7 @@ const SubmitBtn = () => {
 const AddInputBtn = ({ setExamInputs }) => {
   return (
     <button className="Add-input-btn"
-      onClick={() => setExamInputs(previousInputs => [...previousInputs, <EachExamInput key={previousInputs.length}/>])}>
+      onClick={() => setExamInputs(previousInputs => [...previousInputs, <EachExamInput key={previousInputs.length} isActive={true} />])}>
       <span>+</span>
       Add Exam
     </button>
@@ -20,11 +20,8 @@ const AddInputBtn = ({ setExamInputs }) => {
 const EachExamInput = ({ isActive }) => {
   return (
     <div className={`carousel-item ${isActive ? 'active' : ''}`}>
-      <label htmlFor="Exam-name-input" className="Exam-input-label">Name of the Exam and Date :</label>
-      <div>
-        <input type="text" className="Each-exam-input Exam-name-input" placeholder='Enter the Name of the exam' required />
-        <input type="date" className="Each-exam-input" required />
-      </div>
+      <input type="text" className="Each-exam-input Exam-name-input" placeholder='Enter the Name of the exam' required />
+      <input type="date" className="Each-exam-input" required />
     </div>
   );
 };
@@ -32,6 +29,7 @@ const EachExamInput = ({ isActive }) => {
 const ExamInputsCarousel = ({ ExamInputs }) => {
   return (
     <div id="carousel" className="carousel slide" data-bs-ride="false" data-bs-touch="false" data-bs-interval="false">
+      <label htmlFor="Exam-name-input" className="Exam-input-label">{`Exam ${ExamInputs.length} Details :`}</label>
       <div className="carousel-inner">
         {ExamInputs}
       </div>
