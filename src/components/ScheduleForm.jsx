@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import '../styles/ScheduleForm.css';
 
 const SubmitBtn = () => {
@@ -17,11 +17,31 @@ const AddInputBtn = ({ setExamInputs }) => {
   );
 };
 
+const ExamDateInput = ({ examDetails }) => {
+  return (
+    <input
+      type="date"
+      className="Each-exam-input"
+      onChange={(event) => examDetails = { ...examDetails, date: event.target.value }} required />
+  );
+};
+
+const ExamNameInput = ({ examDetails }) => {
+  return (
+    <input
+      type="text"
+      className="Each-exam-input Exam-name-input"
+      placeholder='Enter the Name of the exam'
+      onChange={(event) => examDetails.current = { name: event.target.value }} required />
+  );
+};
+
 const EachExamInput = ({ isActive }) => {
+  const examDetailsRef = useRef();
   return (
     <div className={`carousel-item ${isActive ? 'active' : ''}`}>
-      <input type="text" className="Each-exam-input Exam-name-input" placeholder='Enter the Name of the exam' required />
-      <input type="date" className="Each-exam-input" required />
+      <ExamNameInput examDetails={examDetailsRef.current} />
+      <ExamDateInput examDetails={examDetailsRef.current} />
     </div>
   );
 };
