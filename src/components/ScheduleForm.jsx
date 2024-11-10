@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import '../styles/ScheduleForm.css';
 
 const SubmitBtn = () => {
@@ -6,15 +7,19 @@ const SubmitBtn = () => {
   );
 };
 
-const AddInputBtn = () => {
+const AddInputBtn = ({ setExamInputs }) => {
   return (
-    <button className="Add-input-btn"><span>+</span>Add Exam</button>
+    <button className="Add-input-btn"
+      onClick={() => setExamInputs(previousInputs => [...previousInputs, <EachExamInput key={previousInputs.length}/>])}>
+      <span>+</span>
+      Add Exam
+    </button>
   );
 };
 
-const EachExamInput = () => {
+const EachExamInput = ({ isActive }) => {
   return (
-    <div className="Form-group Each-exam-inputs-container carousel-item active">
+    <div className={`carousel-item ${isActive ? 'active' : ''}`}>
       <label htmlFor="Exam-name-input" className="Exam-input-label">Name of the Exam and Date :</label>
       <div>
         <input type="text" className="Each-exam-input Exam-name-input" placeholder='Enter the Name of the exam' required />
@@ -24,11 +29,11 @@ const EachExamInput = () => {
   );
 };
 
-const ExamInputsCarousel = () => {
+const ExamInputsCarousel = ({ ExamInputs }) => {
   return (
     <div id="carousel" className="carousel slide" data-bs-ride="false" data-bs-touch="false" data-bs-interval="false">
       <div className="carousel-inner">
-        <EachExamInput />
+        {ExamInputs}
       </div>
       <div className="Next-Exam-input-navigation">
         <button className="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
@@ -54,11 +59,12 @@ const ExamsCountInput = () => {
 };
 
 const ScheduleForm = () => {
+  const [ExamInputs, setExamInputs] = useState([<EachExamInput key={0} isActive={true} />]);
   return (
     <div className="Schedule-input-form">
       <ExamsCountInput />
-      <ExamInputsCarousel />
-      <AddInputBtn />
+      <ExamInputsCarousel ExamInputs={ExamInputs} />
+      <AddInputBtn setExamInputs={setExamInputs} />
       <SubmitBtn />
     </div>
   )
